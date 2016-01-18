@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * @file
+ * Module file for block_example.
+ */
+
+//use Drupal\Component\Utility\Unicode;
+//use Drupal\Core\Block\BlockPluginInterface;

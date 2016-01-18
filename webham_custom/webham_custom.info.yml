@@ -1,0 +1,8 @@
+name: Webham custom
+type: module
+description: Example custom webham module
+package: Webham
+
+# Information added by Drupal.org packaging script on 2015-11-25
+core: '8.x'
+project: 'webham_custom'

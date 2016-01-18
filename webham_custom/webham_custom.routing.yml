@@ -1,0 +1,7 @@
+webham_custom.form:
+ path: '/special_form'
+ defaults: 
+  _form: '\Drupal\webham_custom\Form\TestForm'
+  _title: 'Demo form'
+ requirements:
+  _permission: 'access content'
