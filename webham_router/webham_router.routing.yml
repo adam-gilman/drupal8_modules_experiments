@@ -1,0 +1,7 @@
+webham_router.testpagenew:
+ path: '/testpagenew'
+ defaults:
+  _controller: '\Drupal\webham_router\Controller\TestController::test'
+  _title: 'Test page for routing'
+ requirements:
+  _permission: 'accesss content'
