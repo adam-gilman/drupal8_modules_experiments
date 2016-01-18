@@ -5,7 +5,7 @@
  * Contains \Drupal\block_example\Plugin\Block\ExampleEmptyBlock.
  */
 
-namespace Drupal\webham_custom\Plugin\Block;
+namespace Drupal\webham_block\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 

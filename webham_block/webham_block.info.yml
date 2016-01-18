@@ -1,0 +1,6 @@
+name: 'Webham block'
+type: module
+description: 'Demo block for the drupal 8 block system'
+package: Webham
+
+core: 8.x

@@ -5,7 +5,7 @@
  * Contains \Drupal\block_example\Plugin\Block\ExampleEmptyBlock.
  */
 
-namespace Drupal\webham_custom\Plugin\Block;
+namespace Drupal\webham_block\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 
@@ -13,8 +13,8 @@ use Drupal\Core\Block\BlockBase;
  * Provides a 'Example: empty block' block.
  *
  * @Block(
- *   id = "webham_empty_second",
- *   admin_label = @Translation("Webham empty block second")
+ *   id = "webham_custom_first",
+ *   admin_label = @Translation("Webham empty block first")
  * )
  */
 class CustomConfigurableBlock extends BlockBase {
@@ -31,7 +31,7 @@ class CustomConfigurableBlock extends BlockBase {
 	  $form['demo_block_settings'] = array(
 	    '#type' => 'textfield',
 	    '#title' => $this->t('Who'),
-	    '#description' => $this->t('Who do you want to say hello to?'),
+	    '#description' => $this->t('Our custom block'),
 	    '#default_value' => isset($config['demo_block_settings']) ? $config['demo_block_settings'] : '',
 	  );
 	  
