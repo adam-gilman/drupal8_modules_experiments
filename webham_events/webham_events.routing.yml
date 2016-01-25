@@ -1,0 +1,7 @@
+webham_events.dummy_entity_form:
+  path: 'dummy-entity'
+  defaults:
+    _form: '\Drupal\webham_events\Form\DummyEntityForm'
+    _title: 'Demo form'
+  requirements:
+    _permission: 'access administration pages'

@@ -1,0 +1,5 @@
+services:
+  webham_events.webham_subscriber:
+    class: Drupal\webham_events\EventSubscriber\WebhamSubscriber
+    tags:
+      - { name: event_subscriber }

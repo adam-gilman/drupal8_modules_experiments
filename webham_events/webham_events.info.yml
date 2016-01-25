@@ -1,0 +1,6 @@
+name: Webham events
+type: module
+description: Test for the events dispatcher
+core: 8.x
+package: Webham
+project: 'webham_events'

@@ -21,6 +21,7 @@ class TestForm extends FormBase {
   }
   
 
+
   public function buildForm(array $form, FormStateInterface $form_state) {
     
     $form['email'] = array(
@@ -48,5 +49,7 @@ class TestForm extends FormBase {
     
     drupal_set_message($this->t('Your email address is'), 'status');
   }
+
+
   
 }
