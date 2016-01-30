@@ -1,0 +1,7 @@
+webham_ajax_form.form:
+ path: '/webham_ajax_form'
+ defaults: 
+  _form: '\Drupal\webham_ajax_form\Form\AjaxForm'
+  _title: 'Ajax form'
+ requirements:
+  _permission: 'access content'

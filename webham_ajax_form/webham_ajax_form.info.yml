@@ -1,0 +1,8 @@
+name: Webham Ajax Form
+description: 'A module implementing the Drupal 8 ajax form functionality'
+type: module
+core: 8.x
+project: 'webham_ajax_form'
+package: Webham
+libraries:
+ 'core/drupal.dialog.ajax'
