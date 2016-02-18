@@ -3,3 +3,4 @@ description: 'A module implementing the Drupal 8 form functionality'
 type: module
 core: 8.x
 package: Webham
+project: 'webham_form'

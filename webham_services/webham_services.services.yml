@@ -1,0 +1,3 @@
+services:
+    webham_services.demo_service:
+        class: Drupal\webham_services\DemoService

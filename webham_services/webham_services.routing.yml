@@ -1,0 +1,7 @@
+webham_services.demo_page:
+  path: '/services_demo'
+  defaults:
+    _controller: '\Drupal\webham_services\Controller\DemoController::printPage'
+    _title: 'Services Demo'
+  requirements:
+    _permission: 'access content'
