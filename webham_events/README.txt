@@ -1,5 +1,7 @@
-1. we declare the event
-2. we use implement the dispatcher somewhere (in this case in the form_submit)
-3. we hook there and change the saved data with service class (event subscriber) 
-event subscriber could have a random name (webhamsubscriber) 
-Since WebhamSubscirber is a service - it has to be registered as a service.
+1. we declare the event (/src/DemoEvent.php)
+
+2. we use the dispatcher somewhere (in this case in the submitForm in /src/Form/DummyEntityForm.php) with the declared event
+
+3. we hook there and change the saved data with event subscriber (service class), registered here webham_events/webham_events.services.yml and declared here /src/EventSubscriber/WebhamSubscriber.php
+
+
