@@ -4,4 +4,4 @@ webham_router.testpagenew:
   _controller: '\Drupal\webham_router\Controller\TestController::test'
   _title: 'Test page for routing'
  requirements:
-  _permission: 'accesss content'
+  _permission: 'access content'

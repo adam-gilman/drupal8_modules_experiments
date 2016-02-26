@@ -14,6 +14,7 @@ class TestController {
    * Generates an example page.
    */
   public function test() {
+
     return array(
       '#markup' => t('Hello Compuccino!'),
     );
