@@ -3,4 +3,4 @@ type: module
 description: Example node validation - title - number
 package: Webham
 core: 8.x
-project: 'webham_form_validation'
+project: 'webham_formvalidation'
