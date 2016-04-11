@@ -6,6 +6,8 @@
 
 namespace Drupal\webham_router\Controller;
 
+use \Drupal\Core\Config\Config;
+
 /**
  * DemoController.
  */
@@ -15,8 +17,43 @@ class TestController {
    */
   public function test() {
 
+	$config = \Drupal::config('webham_router.new_settings');
+
+	$smt  = $config->get('something');
+
+
     return array(
-      '#markup' => t('Hello Compuccino!'),
+      '#markup' => 'Hello ' . $smt . ' ssss',
     );
+  }
+
+    public function test2() {
+
+    $result = db_query_range('SELECT * FROM node');
+    //kint($result);
+
+
+    $taxonomies = array(
+                    'Innovation' => array(
+                                      'items' => array('New fans', 'New materials')
+                                    ), 
+                    'Current Technology' => array(
+                                      'items' => array('Fans')),
+                                    );
+
+    $taxonomies['nodes']  = count($result);
+    foreach ($result as $record) {
+      // Perform operations on $record->title, etc. here.
+      $taxonomies[$record->title] = $record->title;
+    }
+
+    $response = new Response();
+    $response->setContent(json_encode($taxonomies));
+    $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
+
+
+
   }
 }
