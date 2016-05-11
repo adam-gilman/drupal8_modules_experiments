@@ -1,0 +1,7 @@
+custom-styling:
+  version: 8.x
+  css:
+    theme:
+      css/custom.css: {}
+  js:
+    js/backend.js: {}

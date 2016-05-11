@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_page_attachments()
+ **/
+function webham_assets_page_attachments(array &$page) {
+  if (!\Drupal::currentUser()->hasPermission('access contextual links')) {
+    return;
+  }
+
+  $page['#attached']['library'][] = 'webham_assets/custom-styling';
+}
+
+/**
+ *	Adding our custom validation function for the coordinates field.
+ *  contextual implementing.
+ **/
+function webham_assets_form_alter(&$form, &$form_state, $form_id) {
+	$forms_with_coordinate_validation = array('node_page_edit_form', 'node_page_form');
+	if (in_array($form_id, $forms_with_coordinate_validation)) {
+
+	    // Render the main scripts file.
+	  	$form['javascipt']['#attached']['library'][] = 'webham_assets/custom-styling';
+	}
+
+}

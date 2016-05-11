@@ -1,0 +1,10 @@
+name: 'Webham assets'
+type: module
+description: 'This module will be showing how you may add css and javascripts from a module'
+package: Webham
+
+project: 'webham_assets'
+core: 8.x
+
+libraries:
+  - webham_assets/custom-styling
