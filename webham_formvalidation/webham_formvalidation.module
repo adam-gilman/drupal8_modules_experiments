@@ -1,35 +1,32 @@
 <?php
 /**
  * @file
- * We are adding a validation and we are validating stuff in it. 
- * Slightly different syntax from D7 so thats why this example module might be 
- * helpful for some people.
+ * Validating. Slightly different syntax from D7.
  */
 
-
- /**
- *	Adding our custom validation function for the title.
- **/
+/**
+ * Adding our custom validation function for the title.
+ */
 function webham_formvalidation_form_alter(&$form, &$form_state, $form_id) {
-	
-	// you would rather add your validations just in some cases
-	if ($form['#form_id'] == 'node_article_edit_form') {
-		$form['#validate'][] = '_webham_formvalidation_number_title_validate';	
-	}
+
+  // You would rather add your validations just in some cases.
+  if ($form['#form_id'] == 'node_article_edit_form') {
+    $form['#validate'][] = '_webham_formvalidation_number_title_validate';
+  }
 
 }
 
 /**
- *	Custom validation function for our title.
+ * Custom validation function for our title.
  */
 function _webham_formvalidation_number_title_validate($form, $form_state) {
 
-	if ($form_state->hasValue('title')) {
-		$title = $form_state->getValue('title');
+  if ($form_state->hasValue('title')) {
+    $title = $form_state->getValue('title');
 
-		if (!is_numeric($title[0]['value'])) {
-			$form_state->setErrorByName('title', t('Your title should be a number [this comes from the custom test webham_form_validation module]'));
-		}
-    	
-  	}
+    if (!is_numeric($title[0]['value'])) {
+      $form_state->setErrorByName('title', t('Your title should be a number [this comes from the custom test webham_form_validation module]'));
+    }
+
+  }
 }

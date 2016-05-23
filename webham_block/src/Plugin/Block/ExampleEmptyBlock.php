@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\block_example\Plugin\Block\ExampleEmptyBlock.
- */
-
 namespace Drupal\webham_block\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -26,9 +21,9 @@ class ExampleEmptyBlock extends BlockBase {
     // We return an empty array on purpose. The block will thus not be rendered
     // on the site. See BlockExampleTest::testBlockExampleBasic().
     return array(
-    	'#type' => 'markup',
-    	'#markup' => '<div>helloooo</div>',
-    	);
+      '#type' => 'markup',
+      '#markup' => '<div>' . $this->t('Hello string') . '</div>',
+    );
   }
 
 }

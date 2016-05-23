@@ -1,3 +1,7 @@
+/**
+ * @file
+ */
+
 window.jQuery(function ($) {
-  //  alert('JS is working');
+  // alert('JS is working');.
 });

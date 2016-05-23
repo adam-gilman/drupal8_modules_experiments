@@ -1,0 +1,6 @@
+name: Webham learning
+type: module
+description: Part of the webham test module learning
+package: Webham
+core: 8.x
+project: 'webham_learning'

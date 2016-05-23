@@ -1,22 +1,26 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\webham_services\DemoService.
- */
-
 namespace Drupal\webham_services;
 
+/**
+ * Simple service with simple output.
+ */
 class DemoService {
-  
-  protected $demo_value;
-  
+
+  protected $demoValue;
+
+  /**
+   * We are creating an object here.
+   */
   public function __construct() {
-    $this->demo_value = 'compuccino user from service';
+    $this->demoValue = 'compuccino user from service';
   }
-  
+
+  /**
+   * And our getter here.
+   */
   public function getDemoValue() {
-    return $this->demo_value;
+    return $this->demoValue;
   }
-  
+
 }

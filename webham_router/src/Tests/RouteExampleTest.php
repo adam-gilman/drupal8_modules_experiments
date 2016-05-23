@@ -1,18 +1,14 @@
 <?php
 
-/**
- * @file
- * Definition of Drupal\webham_router\Tests\RouteExampleTest.
- */
-
 namespace Drupal\webham_router\Tests;
 
 use Drupal\simpletest\WebTestBase;
 
 /**
- * Test our custom page if it works fine
+ * Test our custom page if it works fine.
  *
  * @ingroup webham_router
+ *
  * @group webham
  */
 class RouteExampleTest extends WebTestBase {
@@ -24,29 +20,31 @@ class RouteExampleTest extends WebTestBase {
    */
   protected $user;
 
+  /**
+   * Setting up the stuff for testing.
+   */
   protected function setUp() {
-    
+
     parent::setUp();
     $this->contentUser = $this->drupalCreateUser(array('access content'));
-
   }
 
   /**
-   * Enabling the module
+   * Enabling the module.
    *
    * @var array
    */
   public static $modules = array('webham_router', 'block');
 
   /**
-   * The the profile
+   * The the profile.
    *
    * @var string
    */
   protected $profile = 'minimal';
 
   /**
-   * Test the menu item
+   * Test the menu item.
    */
   public function testBlockExampleLink() {
 

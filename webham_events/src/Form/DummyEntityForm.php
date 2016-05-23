@@ -1,24 +1,22 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\webham_events\Form\DummyEntityForm.
- */
-
 namespace Drupal\webham_events\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-// To be able to use the event
+// To be able to use the event.
 use Drupal\webham_events\DemoEvent;
 
+/**
+ * Entity form saving some Config Base.
+ */
 class DummyEntityForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
    */
-  public function getFormID() {
+  public function getFormId() {
     return 'dummy_entity_form';
   }
 
@@ -37,7 +35,7 @@ class DummyEntityForm extends ConfigFormBase {
       '#title' => $this->t('My website'),
       '#default_value' => $config->get('my_website'),
     ];
-    //kint('hello');
+    // kint('hello');.
     return parent::buildForm($form, $form_state);
   }
 
@@ -53,8 +51,7 @@ class DummyEntityForm extends ConfigFormBase {
     $config->set('my_name', $form_state->getValue('my_name'))
       ->set('my_website', $form_state->getValue('my_website'));
 
-    // Special code to implement the Events
-    
+    // Special code to implement the Events.
     $dispatcher = \Drupal::service('event_dispatcher');
 
     $e = new DemoEvent($config);
@@ -63,21 +60,17 @@ class DummyEntityForm extends ConfigFormBase {
 
     $newData = $event->getConfig()->get();
 
-
-    //kint($newData);
-    //die();
-    
+    // kint($newData);
+    // die();
     $config->merge($newData);
 
-
-
-    
-    
-
     $config->save();
-   
+
   }
 
+  /**
+   * Return the editable config names.
+   */
   protected function getEditableConfigNames() {
     return array('system.site');
   }

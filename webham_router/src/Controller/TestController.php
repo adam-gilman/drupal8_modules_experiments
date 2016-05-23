@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\webham_router\Controller\DemoController.
- */
 
 namespace Drupal\webham_router\Controller;
 
@@ -12,34 +8,32 @@ use \Drupal\Core\Config\Config;
  * DemoController.
  */
 class TestController {
+
   /**
    * Generates an example page.
    */
   public function test() {
 
-	$config = \Drupal::config('webham_router.new_settings');
+    $config = \Drupal::config('webham_router.new_settings');
 
-	$smt  = $config->get('something');
-
+    $smt  = $config->get('something');
 
     return array(
       '#markup' => 'Hello ' . $smt . ' ssss',
     );
   }
 
-    public function test2() {
+  /**
+   * Test controller action 2.
+   */
+  public function test2() {
 
     $result = db_query_range('SELECT * FROM node');
-    //kint($result);
-
 
     $taxonomies = array(
-                    'Innovation' => array(
-                                      'items' => array('New fans', 'New materials')
-                                    ), 
-                    'Current Technology' => array(
-                                      'items' => array('Fans')),
-                                    );
+      'Innovation' => array('items' => array('New fans', 'New materials')),
+      'Current Technology' => array('items' => array('Fans')),
+    );
 
     $taxonomies['nodes']  = count($result);
     foreach ($result as $record) {
@@ -52,8 +46,6 @@ class TestController {
     $response->headers->set('Content-Type', 'application/json');
 
     return $response;
-
-
-
   }
+
 }
