@@ -19,7 +19,7 @@ function webham_formvalidation_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Custom validation function for our title.
  */
-function _webham_formvalidation_number_title_validate($form, $form_state) {
+function _webham_formvalidation_number_title_validate($form, &$form_state) {
 
   if ($form_state->hasValue('title')) {
     $title = $form_state->getValue('title');
