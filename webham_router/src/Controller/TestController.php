@@ -2,7 +2,7 @@
 
 namespace Drupal\webham_router\Controller;
 
-use \Drupal\Core\Config\Config;
+use Drupal\Core\Config\Config;
 
 /**
  * DemoController.
@@ -16,11 +16,11 @@ class TestController {
 
     $config = \Drupal::config('webham_router.new_settings');
 
-    $smt  = $config->get('something');
+    $smt = $config->get('something');
 
-    return array(
+    return [
       '#markup' => 'Hello ' . $smt . ' ssss',
-    );
+    ];
   }
 
   /**
@@ -30,12 +30,12 @@ class TestController {
 
     $result = db_query_range('SELECT * FROM node');
 
-    $taxonomies = array(
-      'Innovation' => array('items' => array('New fans', 'New materials')),
-      'Current Technology' => array('items' => array('Fans')),
-    );
+    $taxonomies = [
+      'Innovation' => ['items' => ['New fans', 'New materials']],
+      'Current Technology' => ['items' => ['Fans']],
+    ];
 
-    $taxonomies['nodes']  = count($result);
+    $taxonomies['nodes'] = count($result);
     foreach ($result as $record) {
       // Perform operations on $record->title, etc. here.
       $taxonomies[$record->title] = $record->title;

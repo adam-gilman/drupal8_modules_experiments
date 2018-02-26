@@ -4,12 +4,9 @@ namespace Drupal\webham_ajax_form\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-
-// Special for the ajax.
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\CssCommand;
 use Drupal\Core\Ajax\HtmlCommand;
-
 use Drupal\Core\Ajax\OpenModalDialogCommand;
 
 /**
@@ -29,33 +26,33 @@ class AjaxForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $form['email'] = array(
+    $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Your .com email address.'),
       '#ajax' => [
-        'callback' => array($this, 'validateEmailAjax'),
+        'callback' => [$this, 'validateEmailAjax'],
         'event' => 'change',
-        'progress' => array(
+        'progress' => [
           'type' => 'throbber',
           'message' => t('Verifying email...'),
-        ),
+        ],
       ],
       '#suffix' => '<span class="email-valid-message">suffix</span>',
-    );
+    ];
 
-    $form['show'] = array(
+    $form['show'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
       '#ajax' => [
-        'callback' => array($this, 'submitEmailAjax'),
+        'callback' => [$this, 'submitEmailAjax'],
         'event' => 'click',
-        'progress' => array(
+        'progress' => [
           'type' => 'throbber',
           'message' => t('Submitting email...'),
-        ),
+        ],
       ],
       '#suffix' => '<span class="submit-valid-message">suffix</span>',
-    );
+    ];
 
     return $form;
   }
@@ -109,7 +106,7 @@ class AjaxForm extends FormBase {
       $message = $this->t('Email not valid.');
     }
     // $response->addCommand(new CssCommand('#edit-email', $css));.
-    $response->addCommand(new OpenModalDialogCommand('Alert', 'hello', array('width' => '700')));
+    $response->addCommand(new OpenModalDialogCommand('Alert', 'hello', ['width' => '700']));
     return $response;
   }
 
@@ -130,7 +127,7 @@ class AjaxForm extends FormBase {
 
     $email = $form_state->getValue('email');
 
-    drupal_set_message($this->t('Your email address is @address', array('@address' => $email)), 'status');
+    drupal_set_message($this->t('Your email address is @address', ['@address' => $email]), 'status');
   }
 
 }

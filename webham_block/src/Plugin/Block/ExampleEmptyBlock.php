@@ -20,10 +20,10 @@ class ExampleEmptyBlock extends BlockBase {
   public function build() {
     // We return an empty array on purpose. The block will thus not be rendered
     // on the site. See BlockExampleTest::testBlockExampleBasic().
-    return array(
+    return [
       '#type' => 'markup',
       '#markup' => '<div>' . $this->t('Hello string') . '</div>',
-    );
+    ];
   }
 
 }

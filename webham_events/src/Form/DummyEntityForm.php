@@ -72,7 +72,7 @@ class DummyEntityForm extends ConfigFormBase {
    * Return the editable config names.
    */
   protected function getEditableConfigNames() {
-    return array('system.site');
+    return ['system.site'];
   }
 
 }

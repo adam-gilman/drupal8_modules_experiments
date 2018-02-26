@@ -36,7 +36,7 @@ class DemoController extends ControllerBase {
    */
   public function printPage() {
 
-    $output = t('Hello <strong>@value!</strong>', array('@value' => $this->demoService->getDemoValue()));
+    $output = t('Hello <strong>@value!</strong>', ['@value' => $this->demoService->getDemoValue()]);
 
     // $parser = new Jsonp();
     // ;
@@ -47,9 +47,9 @@ class DemoController extends ControllerBase {
 
     kint($git->log());
 
-    return array(
+    return [
       '#markup' => $output,
-    );
+    ];
   }
 
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Module file where we are attaching the assets.
@@ -20,7 +21,7 @@ function webham_assets_page_attachments(array &$page) {
  */
 function webham_assets_form_alter(&$form, &$form_state, $form_id) {
 
-  $cts_to_check = array('node_page_edit_form', 'node_page_form');
+  $cts_to_check = ['node_page_edit_form', 'node_page_form'];
   if (in_array($form_id, $cts_to_check)) {
 
     // Render the main scripts file.

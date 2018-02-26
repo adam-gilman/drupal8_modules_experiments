@@ -22,14 +22,14 @@ class TestForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $form['email'] = array(
+    $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Your .com email address.'),
-    );
-    $form['show'] = array(
+    ];
+    $form['show'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
-    );
+    ];
 
     return $form;
   }

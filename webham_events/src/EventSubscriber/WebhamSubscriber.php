@@ -14,7 +14,7 @@ class WebhamSubscriber implements EventSubscriberInterface {
    */
   public static function getSubscribedEvents() {
 
-    $events['dummy_entity_form.save'][] = array('onConfigSave', 0);
+    $events['dummy_entity_form.save'][] = ['onConfigSave', 0];
 
     return $events;
   }

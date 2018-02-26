@@ -23,12 +23,12 @@ class CustomConfigurableBlock extends BlockBase {
 
     $config = $this->getConfiguration();
 
-    $form['demo_block_settings'] = array(
+    $form['demo_block_settings'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Who'),
       '#description' => $this->t('Our custom block'),
       '#default_value' => isset($config['demo_block_settings']) ? $config['demo_block_settings'] : '',
-    );
+    ];
 
     return $form;
   }
@@ -56,9 +56,9 @@ class CustomConfigurableBlock extends BlockBase {
       $name = $this->t('to no one');
     }
 
-    return array(
-      '#markup' => $this->t('Hello @name!', array('@name' => $name)),
-    );
+    return [
+      '#markup' => $this->t('Hello @name!', ['@name' => $name]),
+    ];
   }
 
 }
