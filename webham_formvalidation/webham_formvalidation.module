@@ -5,10 +5,12 @@
  * Validating. Slightly different syntax from D7.
  */
 
+ use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Adding our custom validation function for the title.
  */
-function webham_formvalidation_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function webham_formvalidation_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   // You would rather add your validations just in some cases.
   if ($form['#form_id'] == 'node_article_edit_form') {
@@ -20,7 +22,7 @@ function webham_formvalidation_form_alter(&$form, \Drupal\Core\Form\FormStateInt
 /**
  * Custom validation function for our title.
  */
-function _webham_formvalidation_number_title_validate(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function _webham_formvalidation_number_title_validate(&$form, FormStateInterface $form_state) {
 
   if ($form_state->hasValue('title')) {
     $title = $form_state->getValue('title');
